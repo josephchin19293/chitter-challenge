@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	
+	<head>
+		<title>layout</title>
+		<link href="style/main.css" rel="stylesheet"/>
+	</head>
+
+	<header>
+		<div>
+			<img src="images/logo2.png" alt="Logo" style="width:75px;height:40px;">
+		</div>
+	</header>
+	
+	<body>
+		<% if current_user %>
+			<h1>Hi, <%= current_user.name %>!</h1>
+			<form method='post' action='/end-session'>
+			<input type='hidden' name='_method' value='delete'>
+			<input type='submit' value='sign out'>
+			</form>
+		<% end %>
+		<%= yield %>
+	</body>
+
+</html>

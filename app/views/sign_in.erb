@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<title>sign_in</title>
+		<link href="style/main.css" rel="stylesheet"/>
+	</head>
+
+	<body>
+
+		<h1>Sign in!</h1>
+
+		<% if flash[:errors] %>
+		  <p class="notice"><%= flash[:errors] %></p>
+		<% end %>
+
+		<form action='/user/signin' method='post'>
+			email : <input type='text' name='email'>
+			password : <input type='password' name='password'>
+			<input type='submit' value='submit'>
+		</form>
+
+	</body>
+
+</html>
